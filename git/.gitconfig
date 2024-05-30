@@ -1,0 +1,75 @@
+# Private settings in include file
+[diff]
+        tool = difftastic
+
+[difftool]
+        prompt = false
+
+[difftool "difftastic"]
+        cmd = difft "$LOCAL" "$REMOTE"
+
+[pager]
+        difftool = true
+
+[include]
+  path = ~/.gitconfig.local
+
+# `git dft` is less to type than `git difftool`.
+[alias]
+        dft = difftool
+
+# `git dlog` to show `git log -p` with difftastic.
+[alias]
+        dlog = "-c diff.external=difft log -p --ext-diff"
+
+# Dracula theme
+[url "https://github.com/dracula/"]
+  insteadOf = dracula://
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+[color]
+  ui = auto
+  status = auto
+  branch = auto
+[color "branch"]
+  current = cyan bold reverse
+  local = white
+  plain =
+  remote = cyan
+[color "diff"]
+  commit =
+  func = cyan
+  plain =
+  whitespace = magenta reverse
+  meta = white
+  frag = cyan bold reverse
+  old = red
+  new = green
+[color "grep"]
+  context =
+  filename =
+  function =
+  linenumber = white
+  match =
+  selected =
+  separator =
+[color "interactive"]
+  error =
+  header =
+  help =
+  prompt =
+[color "status"]
+  added = green
+  changed = yellow
+  header =
+  localBranch =
+  nobranch =
+  remoteBranch = cyan bold
+  unmerged = magenta bold reverse
+  untracked = red
+  updated = green bold
+[user]
+	email = tom@arenaclub.com
+	name = Tom Hall
