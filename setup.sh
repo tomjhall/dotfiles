@@ -4,12 +4,9 @@
 git submodule init
 git submodule update
 
-base=(
-	bash,
+apps=(
+	bash
 	git
-)
-
-configs=(
 	nvim
 )
 
@@ -20,19 +17,15 @@ stowit() {
 	# -v verbose
 	# -R recursive
 	# -t target
-	stow -v -R -t ${usr} ${app}
+	stow --dotfiles -v -R -t ${usr} ${app}
 }
 
 echo ""
 echo "Stowing apps for user: ${whoami}"
 
 # install apps available to local users and root
-for app in ${base[@]}; do
+for app in ${apps[@]}; do
 	stowit "${HOME}" $app
-done
-
-for config in ${configs[@]}; do
-	stowit "${HOME}/.config/${config}" $config
 done
 
 echo ""
