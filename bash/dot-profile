@@ -89,10 +89,11 @@ alias jctl="journalctl -p 3 -xb"
 
 # my own
 alias yl="NODE_CONFIG_ENV=dev-local yarn"
+alias ylsw="NODE_CONFIG_ENV=dev-local PROMETHEUS_PORT=9465 yarn"
 alias yp="NODE_CONFIG_ENV=dev-proxy yarn"
 alias ys="NODE_CONFIG_ENV=sandbox-proxy yarn"
 
 alias rproxy="mitmproxy -m reverse:http://localhost:8080 -p 8089"
-alias swh="stripe listen --forward-to localhost:8080/webhooks/stripe"
+alias swh="stripe listen --forward-to localhost:8080/webhooks/stripe/account"
 
 alias fixvim="rm ~/.local/state/nvim/swap/*"
