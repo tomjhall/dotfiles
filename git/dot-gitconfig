@@ -73,3 +73,5 @@
 [user]
 	email = tom@arenaclub.com
 	name = Tom Hall
+[rerere]
+	enabled = true
