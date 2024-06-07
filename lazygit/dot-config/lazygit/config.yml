@@ -15,3 +15,7 @@ gui:
   # - 'left': split the window horizontally (side panel on the left, main view on the right)
   # - 'top': split the window vertically (side panel on top, main view below)
   enlargedSideViewLocation: top
+# Use difftastic as the diff tool
+# git:
+#  paging:
+# externalDiffCommand: difft --color=always
