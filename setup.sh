@@ -29,5 +29,8 @@ for app in ${apps[@]}; do
 	stowit "${HOME}" $app
 done
 
+echo "Stowing hyprland config"
+stowit "${HOME}/.config/hypr" hyprland
+
 echo ""
 echo "##### ALL DONE"
