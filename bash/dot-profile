@@ -95,5 +95,6 @@ alias ys="NODE_CONFIG_ENV=sandbox-proxy yarn"
 
 alias rproxy="mitmproxy -m reverse:http://localhost:8080 -p 8089"
 alias swh="stripe listen --forward-to localhost:8080/webhooks/stripe/account"
+alias yt="yarn test 2>&1 | grep '^FAIL'"
 
 alias fixvim="rm ~/.local/state/nvim/swap/*"
