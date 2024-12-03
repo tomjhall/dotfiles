@@ -5,20 +5,21 @@ git submodule init
 git submodule update
 
 apps=(
-	bash
-	git
-	nvim
-	lazygit
+  bash
+  git
+  nvim
+  lazygit
+  aerospace
 )
 
 # run the stow command for the passed in directory ($2) in location $1
 stowit() {
-	usr=$1
-	app=$2
-	# -v verbose
-	# -R recursive
-	# -t target
-	stow --dotfiles -v -R -t ${usr} ${app}
+  usr=$1
+  app=$2
+  # -v verbose
+  # -R recursive
+  # -t target
+  stow --dotfiles -v -R -t ${usr} ${app}
 }
 
 echo ""
@@ -26,7 +27,7 @@ echo "Stowing apps for user: ${whoami}"
 
 # install apps available to local users and root
 for app in ${apps[@]}; do
-	stowit "${HOME}" $app
+  stowit "${HOME}" $app
 done
 
 # echo "Stowing hyprland config"
