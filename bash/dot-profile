@@ -99,6 +99,8 @@ alias dropTest="PACK_LIMIT=20 ADMIN_ACCOUNT=tom@arenaclub.com ADMIN_PASSWORD=111
 alias rproxy="mitmproxy -m reverse:http://localhost:8080 -p 8089"
 alias devProxy="mitmproxy -m reverse:https://dev.api.arenaclub.com -p 8089"
 alias swh="stripe listen --forward-to localhost:8080/webhooks/stripe/account"
+alias swhconnect="stripe listen --forward-to localhost:8080/webhooks/stripe/connect"
+
 alias yt="yarn test 2>&1 | grep '^FAIL'"
 
 alias cleardns="sudo systemctl restart systemd-resolved"
