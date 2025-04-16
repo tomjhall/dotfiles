@@ -4,17 +4,17 @@ return {
   lazy = false,
   version = false, -- set this if you want to always pull the latest change
   opts = {
-    provider = "openai",
-    auto_suggestions_provider = "openai",
-    openai = {
-      endpoint = "https://api.openai.com/v1",
-      model = "gpt-4o",
-      --model = "gpt-3.5-turbo",
+    provider = "claude",
+    auto_suggestions_provider = "claude",
+    claude = {
+      endpoint = "https://api.anthropic.com",
+      model = "claude-3-7-sonnet-20250219",
       timeout = 30000, -- Timeout in milliseconds
       temperature = 0,
-      max_tokens = 4096,
-      ["local"] = false,
+      max_tokens = 20480,
     },
+    --provider = "openai",
+    --auto_suggestions_provider = "openai",
     -- openai = {
     --   endpoint = "https://api.openai.com/v1/chat/completions", -- OpenAI API endpoint
     --   model = "gpt-3.5-turbo", -- Specify the OpenAI model
