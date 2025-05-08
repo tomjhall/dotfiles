@@ -10,7 +10,15 @@ return {
       max_width = { 40, 0.2 },
       min_width = 20,
     },
-    filter_kind = false, -- show all symbol kinds by default
+    filter_kind = {
+      "Class",
+      "Constructor",
+      "Enum",
+      "Function",
+      "Interface",
+      "Method",
+      "Struct",
+    },
     show_guides = true,
   },
   -- Optional dependencies
