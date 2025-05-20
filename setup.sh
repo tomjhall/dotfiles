@@ -7,6 +7,7 @@ git submodule update
 apps=(
   bash
   git
+  jj
   nvim
   lazygit
   aerospace
