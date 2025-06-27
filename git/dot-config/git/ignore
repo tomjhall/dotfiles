@@ -4,3 +4,5 @@
 
 # local rc
 .localrc
+
+**/.claude/settings.local.json
