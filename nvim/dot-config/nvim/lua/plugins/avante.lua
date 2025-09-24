@@ -6,22 +6,26 @@ return {
   opts = {
     provider = "claude",
     auto_suggestions_provider = "claude",
-    claude = {
-      endpoint = "https://api.anthropic.com",
-      model = "claude-3-7-sonnet-20250219",
-      timeout = 30000, -- Timeout in milliseconds
-      temperature = 0,
-      max_tokens = 20480,
+    providers = {
+      claude = {
+        endpoint = "https://api.anthropic.com",
+        model = "claude-3-5-sonnet-20241022",
+        timeout = 30000, -- Timeout in milliseconds
+        extra_request_body = {
+          temperature = 0,
+          max_tokens = 20480,
+        },
+      },
+      --openai = {
+      --  endpoint = "https://api.openai.com/v1/chat/completions", -- OpenAI API endpoint
+      --  model = "gpt-3.5-turbo", -- Specify the OpenAI model
+      --  extra_request_body = {
+      --    temperature = 0.7, -- Adjust creativity
+      --    max_tokens = 4096, -- Maximum response token limit
+      --  },
+      --  api_key = vim.env.OPENAI_API_KEY, -- Use an environment variable for security
+      --},
     },
-    --provider = "openai",
-    --auto_suggestions_provider = "openai",
-    -- openai = {
-    --   endpoint = "https://api.openai.com/v1/chat/completions", -- OpenAI API endpoint
-    --   model = "gpt-3.5-turbo", -- Specify the OpenAI model
-    --   temperature = 0.7, -- Adjust creativity
-    --   max_tokens = 4096, -- Maximum response token limit
-    --   api_key = vim.env.OPENAI_API_KEY, -- Use an environment variable for security
-    -- },
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
   build = "make",
