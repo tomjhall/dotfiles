@@ -109,6 +109,8 @@ alias cleardns="sudo systemctl restart systemd-resolved"
 
 alias fixvim="rm -f ~/.local/state/nvim/swap/*"
 
+alias claude="npx @anthropic-ai/claude-code"
+
 # conda
 # eval "$(/home/tomhall/anaconda3/bin/conda shell.zsh hook)"
 #
