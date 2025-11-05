@@ -90,6 +90,7 @@ alias jctl="journalctl -p 3 -xb"
 # my own
 alias spinup="~/.bin/dev.sh"
 alias spindown="tmux kill-session -t dev-api-session"
+alias codeup="~/.bin/code.sh"
 alias y="yarn"
 alias yl="NODE_CONFIG_ENV=dev-local yarn"
 alias swl="NODE_CONFIG_ENV=dev-local PROMETHEUS_PORT=9465 yarn start-workers"
