@@ -26,7 +26,12 @@ dap.configurations.typescript = {
     cwd = "${workspaceFolder}",
     console = "integratedTerminal",
     internalConsoleOptions = "neverOpen",
-    skipFiles = { "<node_internals>/**" },
+    skipFiles = { "<node_internals>/**", "node_modules/**" },
+    sourceMaps = true,
+    resolveSourceMapLocations = {
+      "${workspaceFolder}/**",
+      "!**/node_modules/**",
+    },
     env = {
       NODE_ENV = "development",
     },
@@ -41,7 +46,12 @@ dap.configurations.typescript = {
     cwd = "${workspaceFolder}",
     console = "integratedTerminal",
     internalConsoleOptions = "neverOpen",
-    skipFiles = { "<node_internals>/**" },
+    skipFiles = { "<node_internals>/**", "node_modules/**" },
+    sourceMaps = true,
+    resolveSourceMapLocations = {
+      "${workspaceFolder}/**",
+      "!**/node_modules/**",
+    },
   },
   {
     name = "Attach to Process",
