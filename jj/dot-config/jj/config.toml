@@ -1,2 +1,6 @@
+[user]
+name = "Tom Hall"
+email = "tom@arenaclub.com"
+
 [ui]
 paginate = "never"
