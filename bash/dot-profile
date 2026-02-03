@@ -115,6 +115,11 @@ alias claude="npx @anthropic-ai/claude-code"
 source ~/.bin/code.sh
 source ~/.bin/dev.sh
 
+# JJ
+alias jjbm='jj bookmark set'
+alias jjp='jj git push --allow-new --bookmark'
+alias jjl='jj log --reversed'
+
 # conda
 # eval "$(/home/tomhall/anaconda3/bin/conda shell.zsh hook)"
 #
