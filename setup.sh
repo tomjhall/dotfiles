@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# update setup with something
+
 # make sure we have pulled in and updated any submodules
 git submodule init
 git submodule update
