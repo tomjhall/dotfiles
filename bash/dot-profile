@@ -71,18 +71,18 @@ alias psmem='ps auxf | sort -nr -k 4'
 alias pscpu='ps auxf | sort -nr -k 3'
 
 # git
-alias addup='git add -u'
-alias addall='git add .'
-alias branch='git branch'
-alias checkout='git checkout'
-alias clone='git clone'
-alias commit='git commit -m'
-alias fetch='git fetch'
-alias pull='git pull origin'
-alias push='git push origin'
-alias stat='git status' # 'status' is protected name so using 'stat' instead
-alias tag='git tag'
-alias newtag='git tag -a'
+# alias addup='git add -u'
+# alias addall='git add .'
+# alias branch='git branch'
+# alias checkout='git checkout'
+# alias clone='git clone'
+# alias commit='git commit -m'
+# alias fetch='git fetch'
+# alias pull='git pull origin'
+# alias push='git push origin'
+# alias stat='git status' # 'status' is protected name so using 'stat' instead
+# alias tag='git tag'
+# alias newtag='git tag -a'
 
 # get error messages from journalctl
 alias jctl="journalctl -p 3 -xb"
@@ -91,13 +91,13 @@ alias jctl="journalctl -p 3 -xb"
 alias spinup="~/.bin/dev.sh"
 alias spindown="tmux kill-session -t dev-api-session"
 alias codeup="~/.bin/code.sh"
-alias y="yarn"
-alias yl="NODE_CONFIG_ENV=dev-local yarn"
-alias swl="NODE_CONFIG_ENV=dev-local PROMETHEUS_PORT=9465 yarn start-workers"
-alias yp="NODE_CONFIG_ENV=dev-proxy yarn"
-alias ys="NODE_CONFIG_ENV=sandbox-proxy yarn"
-alias swp="NODE_CONFIG_ENV=dev-proxy PROMETHEUS_PORT=9465 yarn start-workers"
-alias dropTest="PACK_LIMIT=20 ADMIN_ACCOUNT=tom@arenaclub.com ADMIN_PASSWORD=11111111 BASE_URL=http://localhost:8089 yarn test tests/components/slab-packs/series/load/drop.js"
+#alias y="yarn"
+#alias yl="NODE_CONFIG_ENV=dev-local yarn"
+#alias swl="NODE_CONFIG_ENV=dev-local PROMETHEUS_PORT=9465 yarn start-workers"
+#alias yp="NODE_CONFIG_ENV=dev-proxy yarn"
+#alias ys="NODE_CONFIG_ENV=sandbox-proxy yarn"
+#alias swp="NODE_CONFIG_ENV=dev-proxy PROMETHEUS_PORT=9465 yarn start-workers"
+#alias dropTest="PACK_LIMIT=20 ADMIN_ACCOUNT=tom@arenaclub.com ADMIN_PASSWORD=11111111 BASE_URL=http://localhost:8089 yarn test tests/components/slab-packs/series/load/drop.js"
 
 alias rproxy="mitmproxy -m reverse:http://localhost:8080 -p 8089"
 alias devProxy="mitmproxy -m reverse:https://dev.api.arenaclub.com -p 8089"
