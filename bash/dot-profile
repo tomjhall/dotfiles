@@ -110,7 +110,7 @@ alias cleardns="sudo systemctl restart systemd-resolved"
 
 alias fixvim="rm -f ~/.local/state/nvim/swap/*"
 
-alias claude="npx @anthropic-ai/claude-code"
+alias claude=~/.local/bin/claude
 
 source ~/.bin/code.sh
 source ~/.bin/dev.sh
