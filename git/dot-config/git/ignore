@@ -5,4 +5,15 @@
 # local rc
 .localrc
 
+# mise-en-place
+mise.toml
+.config
+
+# env stuff
+.env.current
+
+
+#w worktrunk
+.worktreeinclude
+
 **/.claude/settings.local.json

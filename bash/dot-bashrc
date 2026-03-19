@@ -80,3 +80,5 @@ alias jctl="journalctl -p 3 -xb"
 
 # Recent installed packages
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
+
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init bash)"; fi
