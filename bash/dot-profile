@@ -119,6 +119,7 @@ source ~/.bin/dev.sh
 alias jjbm='jj bookmark set'
 alias jjp='jj git push --allow-new --bookmark'
 alias jjl='jj log --reversed'
+alias jjinit='jj git init --colocate'
 
 # conda
 # eval "$(/home/tomhall/anaconda3/bin/conda shell.zsh hook)"
