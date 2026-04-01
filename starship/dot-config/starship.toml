@@ -1,22 +1,27 @@
 format = """
 [░▒▓](#a3aed2)\
-[  ](bg:#a3aed2 fg:#090c0c)\
-[](bg:#769ff0 fg:#a3aed2)\
+[  ](bg:#a3aed2 fg:#090c0c)\
+[](bg:#769ff0 fg:#a3aed2)\
 $directory\
-[](fg:#769ff0 bg:#394260)\
+[](fg:#769ff0 bg:#394260)\
 $git_branch\
 $git_status\
-[](fg:#394260 bg:#212736)\
-$env_var\
-[](fg:#394260 bg:#212736)\
+[](fg:#394260 bg:#212736)\
+${custom.env_default}\
+${custom.env_dev_proxy}\
+${custom.env_prod_proxy}\
+[](fg:#394260 bg:#212736)\
 $nodejs\
 $rust\
 $golang\
 $php\
-[](fg:#212736 bg:#1d2230)\
+[](fg:#212736 bg:#1d2230)\
 $time\
-[ ](fg:#1d2230)\
-\n$character"""
+[ ](fg:#1d2230)\
+\n${custom.prompt_default}\
+${custom.prompt_dev_proxy}\
+${custom.prompt_prod_proxy}\
+"""
 
 [directory]
 style = "fg:#e3e5e5 bg:#769ff0"
@@ -26,18 +31,48 @@ truncation_symbol = "…/"
 
 [directory.substitutions]
 "Documents" = "󰈙 "
-"Downloads" = " "
-"Music" = " "
-"Pictures" = " "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
 
-[env_var]
+[custom.env_default]
+command = 'echo "$NODE_CONFIG_ENV"'
+when = '[[ -n "$NODE_CONFIG_ENV" && "$NODE_CONFIG_ENV" != "dev-proxy" && "$NODE_CONFIG_ENV" != "prod-proxy" ]]'
 symbol = "\ue5fc"
-variable = 'NODE_CONFIG_ENV'
-default = ''
-format = '[[ $symbol $env_value](fg:#769ff0 bg:#394260)]($style)' 
+format = '[[ $symbol $output](fg:#769ff0 bg:#394260)]($style)'
+style = "bg:#394260"
+
+[custom.env_dev_proxy]
+command = 'echo "$NODE_CONFIG_ENV"'
+when = '[[ "$NODE_CONFIG_ENV" == "dev-proxy" ]]'
+symbol = "\ue5fc"
+format = '[[ $symbol $output](fg:#f0c674 bg:#394260)]($style)'
+style = "bg:#394260"
+
+[custom.env_prod_proxy]
+command = 'echo "$NODE_CONFIG_ENV"'
+when = '[[ "$NODE_CONFIG_ENV" == "prod-proxy" ]]'
+symbol = "\ue5fc"
+format = '[[ $symbol $output](fg:#cc6666 bg:#394260)]($style)'
+style = "bg:#394260"
+
+[custom.prompt_default]
+command = 'echo "❯"'
+when = '[[ "$NODE_CONFIG_ENV" != "dev-proxy" && "$NODE_CONFIG_ENV" != "prod-proxy" ]]'
+format = '[$output ](bold green)'
+
+[custom.prompt_dev_proxy]
+command = 'echo "DEV>"'
+when = '[[ "$NODE_CONFIG_ENV" == "dev-proxy" ]]'
+format = '[$output ](bold #f0c674)'
+
+[custom.prompt_prod_proxy]
+command = 'echo "PROD>"'
+when = '[[ "$NODE_CONFIG_ENV" == "prod-proxy" ]]'
+format = '[$output ](bold #cc6666)'
 
 [git_branch]
-symbol = ""
+symbol = ""
 style = "bg:#394260"
 format = '[[ $symbol $branch ](fg:#769ff0 bg:#394260)]($style)'
 
@@ -46,22 +81,22 @@ style = "bg:#394260"
 format = '[[($all_status$ahead_behind )](fg:#769ff0 bg:#394260)]($style)'
 
 [nodejs]
-symbol = ""
+symbol = ""
 style = "bg:#212736"
 format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
 
 [rust]
-symbol = ""
+symbol = ""
 style = "bg:#212736"
 format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
 
 [golang]
-symbol = ""
+symbol = ""
 style = "bg:#212736"
 format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
 
 [php]
-symbol = ""
+symbol = ""
 style = "bg:#212736"
 format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
 
@@ -69,4 +104,4 @@ format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
 disabled = false
 time_format = "%R" # Hour:Minute Format
 style = "bg:#1d2230"
-format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
+format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
