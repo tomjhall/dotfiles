@@ -10,6 +10,7 @@ $git_status\
 ${custom.env_default}\
 ${custom.env_dev_proxy}\
 ${custom.env_prod_proxy}\
+${custom.env_test}\
 [](fg:#394260 bg:#212736)\
 $nodejs\
 $rust\
@@ -21,6 +22,7 @@ $time\
 \n${custom.prompt_default}\
 ${custom.prompt_dev_proxy}\
 ${custom.prompt_prod_proxy}\
+${custom.prompt_test}\
 """
 
 [directory]
@@ -37,7 +39,7 @@ truncation_symbol = "…/"
 
 [custom.env_default]
 command = 'echo "$NODE_CONFIG_ENV"'
-when = '[[ -n "$NODE_CONFIG_ENV" && "$NODE_CONFIG_ENV" != "dev-proxy" && "$NODE_CONFIG_ENV" != "prod-proxy" ]]'
+when = '[[ -n "$NODE_CONFIG_ENV" && "$NODE_CONFIG_ENV" != "dev-proxy" && "$NODE_CONFIG_ENV" != "prod-proxy" && "$NODE_CONFIG_ENV" != "test" ]]'
 symbol = "\ue5fc"
 format = '[[ $symbol $output](fg:#769ff0 bg:#394260)]($style)'
 style = "bg:#394260"
@@ -56,9 +58,16 @@ symbol = "\ue5fc"
 format = '[[ $symbol $output](fg:#cc6666 bg:#394260)]($style)'
 style = "bg:#394260"
 
+[custom.env_test]
+command = 'echo "$NODE_CONFIG_ENV"'
+when = '[[ "$NODE_CONFIG_ENV" == "test" ]]'
+symbol = "\ue5fc"
+format = '[[ $symbol $output](fg:#81a2be bg:#394260)]($style)'
+style = "bg:#394260"
+
 [custom.prompt_default]
 command = 'echo "❯"'
-when = '[[ "$NODE_CONFIG_ENV" != "dev-proxy" && "$NODE_CONFIG_ENV" != "prod-proxy" ]]'
+when = '[[ "$NODE_CONFIG_ENV" != "dev-proxy" && "$NODE_CONFIG_ENV" != "prod-proxy" && "$NODE_CONFIG_ENV" != "test" ]]'
 format = '[$output ](bold green)'
 
 [custom.prompt_dev_proxy]
@@ -70,6 +79,11 @@ format = '[$output ](bold #f0c674)'
 command = 'echo "PROD>"'
 when = '[[ "$NODE_CONFIG_ENV" == "prod-proxy" ]]'
 format = '[$output ](bold #cc6666)'
+
+[custom.prompt_test]
+command = 'echo "TEST>"'
+when = '[[ "$NODE_CONFIG_ENV" == "test" ]]'
+format = '[$output ](bold #81a2be)'
 
 [git_branch]
 symbol = ""
