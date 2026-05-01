@@ -2,19 +2,19 @@
 [[ $- != *i* ]] && return
 
 # Load starship prompt if starship is installed
-if  [ -x /usr/bin/starship ]; then
-    __main() {
-        local major="${BASH_VERSINFO[0]}"
-        local minor="${BASH_VERSINFO[1]}"
+if [ -x /usr/bin/starship ]; then
+  __main() {
+    local major="${BASH_VERSINFO[0]}"
+    local minor="${BASH_VERSINFO[1]}"
 
-        if ((major > 4)) || { ((major == 4)) && ((minor >= 1)); }; then
-            source <("/usr/bin/starship" init bash --print-full-init)
-        else
-            source /dev/stdin <<<"$("/usr/bin/starship" init bash --print-full-init)"
-        fi
-    }
-    __main
-    unset -f __main
+    if ((major > 4)) || { ((major == 4)) && ((minor >= 1)); }; then
+      source <("/usr/bin/starship" init bash --print-full-init)
+    else
+      source /dev/stdin <<<"$("/usr/bin/starship" init bash --print-full-init)"
+    fi
+  }
+  __main
+  unset -f __main
 fi
 
 # Advanced command-not-found hook
@@ -22,11 +22,23 @@ source /usr/share/doc/find-the-command/ftc.bash
 
 ## Useful aliases
 
+# Custom 'murder' function to kill processes on a specific port
+murder() {
+  if [ -z "$1" ]; then
+    echo "Usage: murder <port>"
+    return 1
+  fi
+
+  # lsof -t -i :PORT returns only the PID
+  # xargs kill -9 sends the force-kill signal to that PID
+  lsof -ti :"$1" | xargs kill -9 2>/dev/null && echo "Port $1 is now free." || echo "No process found on port $1."
+}
+
 # Replace ls with exa
-alias ls='exa -al --color=always --group-directories-first --icons' # preferred listing
-alias la='exa -a --color=always --group-directories-first --icons'  # all files and dirs
-alias ll='exa -l --color=always --group-directories-first --icons'  # long format
-alias lt='exa -aT --color=always --group-directories-first --icons' # tree listing
+alias ls='exa -al --color=always --group-directories-first --icons'     # preferred listing
+alias la='exa -a --color=always --group-directories-first --icons'      # all files and dirs
+alias ll='exa -l --color=always --group-directories-first --icons'      # long format
+alias lt='exa -aT --color=always --group-directories-first --icons'     # tree listing
 alias l.='exa -ald --color=always --group-directories-first --icons .*' # show only dotfiles
 
 # Replace some more things with better alternatives
