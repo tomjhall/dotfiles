@@ -19,3 +19,15 @@ gui:
 # git:
 #  paging:
 # externalDiffCommand: difft --color=always
+customCommands:
+  - key: "C"
+    context: "files"
+    command: 'git commit --no-verify -m "{{.Form.Title}}"{{if .Form.Body}} -m "{{.Form.Body}}"{{end}}'
+    description: "Commit without hooks (title + body)"
+    prompts:
+      - type: "input"
+        title: "Commit title"
+        key: "Title"
+      - type: "input"
+        title: "Commit description (optional)"
+        key: "Body"
