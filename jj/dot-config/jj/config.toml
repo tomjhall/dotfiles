@@ -4,3 +4,6 @@ email = "tom@arenaclub.com"
 
 [ui]
 paginate = "never"
+
+[snapshot]
+max-new-file-size = "20MiB"
