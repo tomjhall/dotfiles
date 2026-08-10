@@ -60,3 +60,6 @@ export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
 
 if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
 eval "$(mise activate zsh)"
+
+# jj workspace wrapper (mimics worktrunk post-start hooks)
+[ -f "$HOME/.jw.zsh" ] && source "$HOME/.jw.zsh"
