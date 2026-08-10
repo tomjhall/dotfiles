@@ -75,6 +75,11 @@ command = 'echo "DEV>"'
 when = '[[ "$NODE_CONFIG_ENV" == "dev-proxy" ]]'
 format = '[$output ](bold #f0c674)'
 
+[custom.prompt_feature_proxy]
+command = 'echo "FEATURE>"'
+when = '[[ "$NODE_CONFIG_ENV" == "feature-proxy-local" ]]'
+format = '[$output ](bold #f000c6)'
+
 [custom.prompt_prod_proxy]
 command = 'echo "PROD>"'
 when = '[[ "$NODE_CONFIG_ENV" == "prod-proxy" ]]'
