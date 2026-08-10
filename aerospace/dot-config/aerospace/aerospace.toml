@@ -138,8 +138,12 @@ alt-e = 'workspace E' # ultrawide 3
 
 alt-down = 'focus-monitor down'
 alt-up = 'focus-monitor up'
+alt-left = 'focus-monitor left'
+alt-right = 'focus-monitor right'
 alt-shift-down = 'move-workspace-to-monitor down'
 alt-shift-up = 'move-workspace-to-monitor up'
+alt-shift-left = 'move-workspace-to-monitor left'
+alt-shift-right = 'move-workspace-to-monitor right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = 'move-node-to-workspace 1'
