@@ -75,3 +75,5 @@
 	name = Tom Hall
 [rerere]
 	enabled = true
+[core]
+	pager = hunk pager
