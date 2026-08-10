@@ -1,0 +1,34 @@
+# ~/.config/tuicr/config.toml
+
+# Top-level keys must stay above the first table header, otherwise TOML folds
+# them into that table and tuicr warns about an unknown key.
+diff_view = "side-by-side" # toggle at runtime with :diff
+
+[forge]
+# tuicr only offers a boolean here: true prepends a hardcoded "[TYPE] " tag
+# (src/forge/submit.rs, format!("[{ty}] ")), false submits the raw body.
+# There is no format string, so "suggestion: " has to be typed by hand.
+comment_type_prefix = false
+
+# Types still drive the TUI badge colour and the Tab cycle order; turning the
+# prefix off only affects what gets pushed to GitHub/GitLab on :submit.
+# Note: markdown/clipboard export ignores this flag and still writes [TYPE].
+[[comment_types]]
+id = "issue"
+label = "Issue"
+color = "red"
+
+[[comment_types]]
+id = "suggestion"
+label = "Suggestion"
+color = "yellow"
+
+[[comment_types]]
+id = "note"
+label = "Note"
+color = "blue"
+
+[[comment_types]]
+id = "praise"
+label = "Praise"
+color = "green"
