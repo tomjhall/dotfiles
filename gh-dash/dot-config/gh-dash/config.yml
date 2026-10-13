@@ -5,6 +5,12 @@ prSections:
     filters: is:open review-requested:@me
   - title: Involved
     filters: is:open involves:@me -author:@me
+  - title: Jatin
+    filters: is:open author:jatin-arena org:arenaclub
+  - title: Pavan
+    filters: is:open author:pmohan-lab org:arenaclub
+  - title: My Merged Pull Requests
+    filters: is:merged author:@me
 issuesSections:
   - title: My Issues
     filters: is:open author:@me
